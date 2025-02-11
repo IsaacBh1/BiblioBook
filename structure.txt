@@ -1,0 +1,21 @@
+    ecommerce-frontend/
+│── public/                  # Static assets (images, icons, etc.)
+│── src/
+│   ├── api/                 # API service calls (Axios, Fetch, GraphQL, etc.)
+│   ├── assets/              # Images, icons, fonts, etc.
+│   ├── components/          # Reusable UI components (Button, Card, etc.)
+│   ├── config/              # Configurations (API URLs, environment variables)
+│   ├── contexts/            # Global state/context providers (Auth, Cart, etc.)
+│   ├── hooks/               # Custom React hooks (useAuth, useCart, etc.)
+│   ├── layouts/             # Page layouts (Header, Footer, Sidebar, etc.)
+│   ├── pages/               # Route-based pages (Home, Product, Cart, etc.)
+│   ├── routes/              # Routing configurations
+│   ├── redux/               # Redux store, slices, and reducers (if using Redux)
+│   ├── services/            # API service functions (ProductService, UserService, etc.)
+│   ├── utils/               # Helper functions (formatPrice, validateForm, etc.)
+│   ├── App.js               # Main application entry
+│   ├── index.js             # React root render
+│   ├── theme/               # Styling & theme configurations
+│── .env                     # Environment variables
+│── package.json             # Project dependencies
+│── README.md                # Documentation
