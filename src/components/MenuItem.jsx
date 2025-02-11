@@ -14,7 +14,7 @@ const MenuItem = ({ name, icon, onClick, style }) => {
     borderRadius: '8px',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
-    color: '#34495e',
+    color: '#EAE2C6',
     fontSize: '1rem',
     ...style,
     ...(isHovered && {
@@ -22,7 +22,7 @@ const MenuItem = ({ name, icon, onClick, style }) => {
       transform: 'translateX(5px)'
     }),
     ...(name === 'Sign out' && {
-      color: '#e74c3c',
+      color: '#EAE2C6',
       marginTop: '20px',
       '&:hover': {
         backgroundColor: '#fbe9e7'

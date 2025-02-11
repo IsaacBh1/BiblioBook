@@ -5,7 +5,7 @@ const navStyle = {
     top: 0,
     left: 0,
     right: 0,
-    backgroundColor: "#5DC9CB",
+    backgroundColor: "#F2EFE7",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -45,6 +45,7 @@ function Navbar() {
         }}
         style={navStyle.img}
       />
+
     </nav>
   );
 }
