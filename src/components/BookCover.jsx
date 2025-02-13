@@ -6,7 +6,7 @@ function StarsList({ rating }) {
   const stars = [];
   for (let i = 0; i < 5; i++) {
     stars.push(
-      <span key={i} style={{ color: i < rating ? "#gold" : "#eaeaea" }}>
+      <span key={i} style={{ color: i < rating ? "gold" : "grey" }}>
         ★
       </span>
     );
@@ -18,8 +18,9 @@ function BookCover({
   book,
   // eslint-disable-next-line no-unused-vars
   children,
-  background,
+  background="#fafafa",
 }) {
+  console.log(background)
   const [isHovered, setIsHovered] = useState(false);
   const bookCoverStyle = {
     container: {
@@ -36,16 +37,20 @@ function BookCover({
       transition: "transform 0.3s ease",
       backgroundColor: background,
       borderRadius: "0.9rem",
+      // boxShadow:  "rgba(149, 157, 165, 0.2) 3px 8px 24px" , 
+      boxShadow: isHovered
+        ? "rgba(149, 157, 165, 0.2) 3px 8px 24px"
+        : "box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
     },
     nameStyle: {
-      color: "#eaeaea",
+      color: "#454545",
       margin: "0",
       padding: "0",
       fontSize: "1.1rem",
       fontFamily: "Roboto, sans-serif",
     },
     imageStyle: {
-      height:"auto",
+      height: "auto",
       width: "100%",
       overflow: "hidden",
       borderRadius: "0.7rem",
@@ -62,7 +67,6 @@ function BookCover({
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      // backgroundColor: "#333",
       width: "100%",
       padding: "0.3rem 0.5rem",
       borderRadius: "0 0 0.7rem 0.7rem",

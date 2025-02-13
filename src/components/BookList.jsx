@@ -20,7 +20,7 @@ function BookList({ books, children }) {
       {children}
       <div style={BookListStyle.countent}>
         {books.map((book) => (
-          <BookCover book={book} key={book.id} background={"#303030"} />
+          <BookCover book={book} key={book.id} background={"#fafafa"} />
         ))}
       </div>
     </div>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 
-const MenuItem = ({ name, icon, onClick, style }) => {
+const   MenuItem = ({ name, icon, onClick, style }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const defaultItemStyles = {

@@ -45,7 +45,6 @@ function Navbar() {
         }}
         style={navStyle.img}
       />
-
     </nav>
   );
 }

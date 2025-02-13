@@ -1,16 +1,15 @@
-import { BookCover } from "./BookCover";
+// import { BookCover } from "./BookCover";
 import PropTypes from "prop-types";
-
+import { CardCarousel } from "./CardCarousel";
 
 const baseContainerStyle = {
   display: "flex",
   justifyContent: "center",
-  flexDirection: "column",
-  alignItems: "center",
-  padding: "1rem",
-  backgroundColor: "#EAE2C6",
+ 
+  background: "linear-gradient(#FFDAB3,#f1f1f1 )",
   width: "100%",
-  height: "25rem",
+  height: "27rem",
+  marginTop: "3rem",
 };
 
 const descriptionStyle = {
@@ -20,30 +19,16 @@ const descriptionStyle = {
   gap: "4rem",
 };
 
-function CategorySection({ books, category = {}, children }) {
+function CategorySection({ books, children }) {
   const containerStyle = {
     ...baseContainerStyle,
-    backgroundImage: category.image ? `url(${category.image})` : undefined,
+    // backgroundImage: category.image ? `url(${category.image})` : undefined,
   };
 
   return (
     <div style={containerStyle}>
-      <div style={{ height: "40%" }}></div>
       {children}
-      <div style={descriptionStyle}>
-        {category.name ? (
-          <h1>{category.name}</h1>
-        ) : (
-          books.map((book) => {
-
-            <BookCover
-              key={book.id}
-              book={book}
-              txtcolor="#545050"
-            />;
-          })
-        )}
-      </div>
+      <div style={descriptionStyle}>{<CardCarousel books={books} />}</div>
     </div>
   );
 }
