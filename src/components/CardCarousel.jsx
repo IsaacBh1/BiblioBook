@@ -14,7 +14,7 @@ const CardCarouselStyle = {
         backgroundColor: "transparent",
         border: "none",
         fontSize: "2rem",
-        cursor: "pointer",
+        cursor: "pointer"
     },
     cardCarousel: {
         display: "flex",
@@ -30,6 +30,17 @@ const CardCarouselStyle = {
         boxSizing: "border-box",
     },
 };
+
+
+
+function Arrow({handleOnClick , iconPath}) {
+    return(
+    <button onClick={handleOnClick} style={CardCarouselStyle.scrollButton}>
+        <img src={iconPath} alt={iconPath} />
+    </button>
+    )
+}
+
 
 function CardCarousel({ books }) {
     const carouselRef = useRef(null);
@@ -48,6 +59,9 @@ function CardCarousel({ books }) {
         }
     };
 
+
+
+
     const scrollRight = () => {
         if (carouselRef.current.scrollLeft + carouselRef.current.clientWidth >= carouselRef.current.scrollWidth) {
             carouselRef.current.scrollTo({
@@ -64,19 +78,17 @@ function CardCarousel({ books }) {
 
     return (
         <div style={CardCarouselStyle.cardCarouselContainer}>
-            <button onClick={scrollLeft} style={CardCarouselStyle.scrollButton}>
-                {"<"}
-            </button>
-            <div style={CardCarouselStyle.cardCarousel} ref={carouselRef}>
+            <Arrow iconPath={"src/assets/caret-left.svg"} handleOnClick={scrollLeft}/>
+            
+            <div style={CardCarouselStyle.cardCarousel} ref={carouselRef} >
                 {books.map((book, index) => (
                     <div key={index} >
                         <BookCover book={book} />
                     </div>
                 ))}
             </div>
-            <button onClick={scrollRight} style={CardCarouselStyle.scrollButton}>
-                {">"}
-            </button>
+            <Arrow iconPath={"src/assets/caret-right.svg"} handleOnClick={scrollRight}/>
+          
         </div>
     );
 }

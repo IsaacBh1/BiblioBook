@@ -10,22 +10,22 @@ const   MenuItem = ({ name, icon, onClick, style }) => {
     alignItems: 'center',
     padding: '12px 15px',
     border: 'none',
-    background: 'none',
+    backgroundColor: ' #e8e8e8',
     borderRadius: '8px',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
-    color: '#EAE2C6',
-    fontSize: '1rem',
+    color: ' #363636',
+    fontSize: '1.2rem',
     ...style,
     ...(isHovered && {
-      backgroundColor: '#e8e8e8',
-      transform: 'translateX(5px)'
+      backgroundColor: " #aaa" , 
+      transform: 'translateX(7px)'
     }),
     ...(name === 'Sign out' && {
-      color: '#EAE2C6',
+      color: '#363636',
       marginTop: '20px',
       '&:hover': {
-        backgroundColor: '#fbe9e7'
+        backgroundColor: ' #aaa'
       }
     })
   };
@@ -37,7 +37,9 @@ const   MenuItem = ({ name, icon, onClick, style }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span style={{ marginRight: '12px', fontSize: '1.2rem' }}>{icon}</span>
+      <span style={{ marginRight: '12px', fontSize: '1.2rem' }}>
+        <img src={icon} alt={icon} />
+      </span>
       {name}
     </button>
   );

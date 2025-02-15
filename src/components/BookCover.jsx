@@ -20,7 +20,6 @@ function BookCover({
   children,
   background="#fafafa",
 }) {
-  console.log(background)
   const [isHovered, setIsHovered] = useState(false);
   const bookCoverStyle = {
     container: {

@@ -25,24 +25,19 @@ const navStyle = {
   },
 };
 
-function Navbar() {
+function Navbar({openSideBarClickHandler}) {
   return (
     <nav style={navStyle.container}>
       <img
         src="src/assets/list.svg"
         alt="list all"
-        onClick={() => {
-          console.log("list clicked");
-        }}
+        onClick = {() => openSideBarClickHandler(true)}
         style={navStyle.img}
       />
       <h1 style={navStyle.logo}>BiblioBook</h1>
       <img
         src="src/assets/search.svg"
         alt="search"
-        onClick={() => {
-          console.log("seach clicked");
-        }}
         style={navStyle.img}
       />
     </nav>

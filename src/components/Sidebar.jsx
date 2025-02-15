@@ -1,52 +1,58 @@
 import PropTypes from "prop-types";
 import { MenuItem } from "./MenuItem";
+import { useState } from "react";
 
+const Sidebar = ({ username, onMenuItemClick, styles = {}, CloseSideBarHandler }) => {
+  const [closeSidebar, setCloseSidebar] = useState(false);
+  
+  const defaultStyles = {
+    sidebar: {
+      width: '250px',
+      height: '100vh',
+      backgroundColor: '#F2EFE7',
+      padding: '20px',
+      boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)',
+      position: 'fixed',
+      top: 0,
+      left: closeSidebar ? '-250px' : '0',
+      zIndex: 20,
+      transition: 'left 3s ease-in-out'
+    },
+    welcomeSection: {
+      color: '#252525',
+      marginBottom: '30px',
+      fontSize: '1.5rem',
+      paddingBottom: '10px',
+      borderBottom: '2px solid #EAE2C6'
+    },
+    menu: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '8px'
+    },
+    closeBtnStyle: {
+      position: "absolute",
+      right: "0.5rem",
+      top: "0.5rem",
+      cursor: "pointer"
+    }
+  };
 
-const defaultStyles = {
-  sidebar: {
-    width: '250px',
-    height: '100vh',
-    backgroundColor: '#242424',
-    padding: '20px',
-    boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)',
-    position : "fixed",
-    top : 0 ,
-    left :0 ,
-    zIndex : 20 
-
-  },
-  welcomeSection: {
-    color: '#2c3e50',
-    marginBottom: '30px',
-    fontSize: '1.5rem',
-    paddingBottom: '10px',
-    borderBottom: '2px solid #EAE2C6'
-  },
-  menu: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '8px'
-  }
-};
-
-
-
-const Sidebar = ({ username, onMenuItemClick, styles = {} }) => {
   const mergedStyles = { ...defaultStyles, ...styles };
   const menuItems = [
-    { name: "Profile", icon: "👤" },
-    { name: "Catalog", icon: "📚" },
-    { name: "Friends", icon: "👥" },
-    { name: "Groups", icon: "🕴️" },
-    { name: "Events", icon: "📅" },
-    { name: "Settings", icon: "⚙️" },
-    { name: "Sign out", icon: "🚪" },
+    { name: "Profile", icon: "src/assets/user-circle-fill.svg" },
+    { name: "Favorites", icon: "src/assets/bookmark-fill.svg" },
+    { name: "Catalog", icon: "src/assets/books-fill.svg" },
+    { name: "Groups", icon: "src/assets/users-three-fill.svg" },
+    { name: "Settings", icon: "src/assets/gear-fill.svg" },
+    { name: "Sign out", icon: "src/assets/sign-out-fill.svg" },
   ];
 
   return (
     <div style={mergedStyles.sidebar}>
+      <img src="src/assets/x.svg" alt="close" style={defaultStyles.closeBtnStyle} onClick={() => CloseSideBarHandler(false)} />
       <div style={mergedStyles.welcomeSection}>
-        <h4 style={{color:"#F2EFE7"}}>Welcome, {username}!</h4>
+        <h4 style={{ color: "#252525" }}>Welcome, {username}!</h4>
       </div>
 
       <nav style={mergedStyles.menu}>
