@@ -6,16 +6,16 @@ function BookList({ books, children }) {
       display: "flex",
       flexDirection: "column",
       gap: "0.5rem",
-      margin:"2rem"
+      margin: "2rem",
     },
     countent: {
       display: "flex",
       flexWrap: "wrap",
       gap: "1.5rem",
-      justifyContent:"center"
+      justifyContent: "center",
     },
   };
-  
+
   return (
     <div style={BookListStyle.container}>
       {children}

@@ -91,12 +91,61 @@ const books = [
     author: "isaac Asimov",
     image: "src\\Images\\img4.png",
   },
-
-  
-
-
-
-
 ];
 
-export { books };
+const categories = [
+  {
+    name: "Comedy",
+    image: "src/assets/categoriesBackgrounds/comedy.png",
+  },
+  {
+    name: "Drama",
+    image: "src/assets/categoriesBackgrounds/drama.png",
+  },
+  {
+    name: "Science",
+    image: "src/assets/categoriesBackgrounds/science.png",
+  },
+  {
+    name: "Fantasy",
+    image: "src/assets/categoriesBackgrounds/fantasy.png",
+  },
+  {
+    name: "Mystery",
+    image: "src/assets/categoriesBackgrounds/mistery.png",
+  },
+  {
+    name: "Romance",
+    image: "src/assets/categoriesBackgrounds/romance.png",
+  },
+  {
+    name: "Horror",
+    image: "src/assets/categoriesBackgrounds/horror.png",
+  },
+  {
+    name: "Kids",
+    image: "src/assets/categoriesBackgrounds/kids.png",
+  },
+  {
+    name: "Poetry",
+    image: "src/assets/categoriesBackgrounds/poetry.png",
+  },
+  {
+    name: "Fiction",
+    image: "src/assets/categoriesBackgrounds/fiction.png",
+  },
+  {
+    name: "History",
+    image: "src/assets/categoriesBackgrounds/history.png",
+  },
+  {
+    name: "Thriller",
+    image: "src/assets/categoriesBackgrounds/thriller.png",
+  },
+  {
+    name: "Crime",
+    image: "src/assets/categoriesBackgrounds/crime.png",
+  },
+];
+
+export { books, categories };

@@ -4,21 +4,27 @@ import { useState } from "react";
 
 function StarsList({ rating }) {
   const stars = [];
+  const starNumber = Math.ceil(rating);
   for (let i = 0; i < 5; i++) {
     stars.push(
-      <span key={i} style={{ color: i < rating ? "gold" : "grey" }}>
+      <span key={i} style={{ color: i < starNumber ? "gold" : "grey" }}>
         ★
       </span>
     );
   }
-  return <div>{stars}</div>;
+  return (
+    <div>
+      {stars}
+      <span style={{ color: "#252525" }}> {rating}</span>{" "}
+    </div>
+  );
 }
 
 function BookCover({
   book,
   // eslint-disable-next-line no-unused-vars
   children,
-  background="#fafafa",
+  background = "#fafafa",
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const bookCoverStyle = {
@@ -36,10 +42,9 @@ function BookCover({
       transition: "transform 0.3s ease",
       backgroundColor: background,
       borderRadius: "0.9rem",
-      // boxShadow:  "rgba(149, 157, 165, 0.2) 3px 8px 24px" , 
       boxShadow: isHovered
         ? "rgba(149, 157, 165, 0.2) 3px 8px 24px"
-        : "box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
+        : "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
     },
     nameStyle: {
       color: "#454545",
@@ -82,7 +87,7 @@ function BookCover({
       <div style={bookCoverStyle.description}>
         <h2 style={bookCoverStyle.nameStyle}>{book.name}</h2>
         <p style={bookCoverStyle.authorStyle}>{book.author}</p>
-        <StarsList rating={3} />
+        <StarsList rating={3.5} />
       </div>
     </div>
   );
