@@ -5,7 +5,7 @@ const navStyle = {
     top: 0,
     left: 0,
     right: 0,
-    backgroundColor: "#F2EFE7",
+    backgroundColor: "rgb(255, 218, 179)",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -16,7 +16,7 @@ const navStyle = {
   logo: {
     color: "#404040",
     fontfamily: "serif",
-    fontSize: "1.2rem",
+    fontSize: "1.6rem",
   },
   img: {
     width: "1.5rem",

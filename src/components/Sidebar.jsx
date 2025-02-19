@@ -3,20 +3,21 @@ import { MenuItem } from "./MenuItem";
 import { useState } from "react";
 
 const Sidebar = ({ username, onMenuItemClick, styles = {}, CloseSideBarHandler }) => {
-  const [closeSidebar, setCloseSidebar] = useState(false);
+  const [closeSidebar, ] = useState(false);
   
   const defaultStyles = {
     sidebar: {
-      width: '250px',
+      width: closeSidebar ? '0' : '250px',
       height: '100vh',
       backgroundColor: '#F2EFE7',
       padding: '20px',
       boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)',
       position: 'fixed',
       top: 0,
-      left: closeSidebar ? '-250px' : '0',
+      left:0 , 
+      // left: closeSidebar ? '-250px' : '0',
       zIndex: 20,
-      transition: 'left 3s ease-in-out'
+      transition: "3s" , 
     },
     welcomeSection: {
       color: '#252525',
@@ -36,6 +37,13 @@ const Sidebar = ({ username, onMenuItemClick, styles = {}, CloseSideBarHandler }
       top: "0.5rem",
       cursor: "pointer"
     }
+    };
+  
+    Sidebar.propTypes = {
+      username: PropTypes.string.isRequired,
+      onMenuItemClick: PropTypes.func.isRequired,
+      styles: PropTypes.object,
+      CloseSideBarHandler: PropTypes.func.isRequired,
   };
 
   const mergedStyles = { ...defaultStyles, ...styles };
