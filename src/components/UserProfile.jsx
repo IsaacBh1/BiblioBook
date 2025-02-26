@@ -3,7 +3,6 @@ import { ProfileHeader } from "./ProfileHeader.jsx";
 import { PublishBook } from "./PublishBook.jsx";
 import { BooksFeed } from "./BooksFeed.jsx";
 
-
 function UserProfile() {
   const [books, setBooks] = useState([]);
   const [newBook, setNewBook] = useState("");
@@ -31,10 +30,22 @@ function UserProfile() {
     maxWidth: "70vw",
     margin: "2rem auto",
     padding: "0 1rem",
+    BackgoundColor: "f1f1f1",
   };
 
   return (
     <div style={containerStyle}>
+      <div
+        style={{
+          position: "absolute",
+          top: "2rem",
+          left: "2rem",
+          cursor:"pointer"
+        }}
+      >
+        
+        <img src="src/assets/arrow-left-bold.svg" alt="return" />
+      </div>
       <ProfileHeader user={user} />
       <PublishBook
         newBook={newBook}
@@ -46,4 +57,4 @@ function UserProfile() {
   );
 }
 
-export {UserProfile}
+export { UserProfile };

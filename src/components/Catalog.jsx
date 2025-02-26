@@ -18,7 +18,7 @@ function Catalog() {
           style={{
             position: "absolute",
             left: "2rem",
-            top: "3rem",
+            top: "4rem",
             color: "#252525",
           }}
         >
