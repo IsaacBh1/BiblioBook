@@ -25,6 +25,7 @@ const navStyle = {
   },
 };
 
+// eslint-disable-next-line react/prop-types
 function Navbar({openSideBarClickHandler}) {
   return (
     <nav style={navStyle.container}>

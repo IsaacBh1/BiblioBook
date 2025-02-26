@@ -1,0 +1,22 @@
+/* Initial state of the sidebar when it enters */
+.sidebar-enter {
+    transform: translateX(-100%);
+  }
+  
+  /* Transitioning in: slide to original position */
+  .sidebar-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms ease-in;
+  }
+  
+  /* Initial state for exit: at its normal position */
+  .sidebar-exit {
+    transform: translateX(0);
+  }
+  
+  /* Transitioning out: slide out to the left */
+  .sidebar-exit-active {
+    transform: translateX(-100%);
+    transition: transform 300ms ease-out;
+  }
+  

@@ -18,7 +18,7 @@ const   MenuItem = ({ name, icon, onClick, style }) => {
     fontSize: '1.2rem',
     ...style,
     ...(isHovered && {
-      backgroundColor: " #aaa" , 
+      backgroundColor: " #FFDAB3" , 
       transform: 'translateX(7px)'
     }),
     ...(name === 'Sign out' && {
